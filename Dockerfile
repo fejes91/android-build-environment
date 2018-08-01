@@ -74,12 +74,6 @@ ENV ANDROID_COMPONENTS platform-tools,android-23,build-tools-23.0.2,build-tools-
 # Install Android tools
 RUN echo y | /usr/local/android-sdk/tools/android update sdk --filter "${ANDROID_COMPONENTS}" --no-ui -a
 
-# Install Android NDK
-RUN wget http://dl.google.com/android/repository/android-ndk-r12-linux-x86_64.zip
-RUN unzip android-ndk-r12-linux-x86_64.zip
-RUN mv android-ndk-r12 /usr/local/android-ndk
-RUN rm android-ndk-r12-linux-x86_64.zip
-
 # Environment variables
 ENV ANDROID_HOME /usr/local/android-sdk
 ENV ANDROID_SDK_HOME $ANDROID_HOME
